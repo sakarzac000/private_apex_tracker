@@ -9,6 +9,7 @@ verify_ssl = true
 requests = "*"
 pprint = "*"
 flask = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
