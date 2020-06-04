@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Tracker</title>
+    <script>
+        async function getApexStats() {
+            let platformInput = document.getElementById('platform-input').value;
+            console.log(platformInput);
+            let nameInput = document.getElementById('name-input').value;
+            console.log(nameInput);
+
+            fetch('127.0.0.1:5000/')
+            .then(
+                function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                    response.status);
+                    return;
+                }
+
+                // Examine the text in the response
+                response.json().then(function(data) {
+                    console.log(data);
+                });
+                }
+            )
+            .catch(function(err) {
+                console.log('ApexError:', err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="platform-input" placeholder="platform">
+    <input type="text" name="" id="name-input" placeholder="name">
+    <button onclick="getApexStats()">Submit</button>
+    <div class="output">
+        <p id="changeable">This is an output</p>
+    </div>
+</body>
+</html>
