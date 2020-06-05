@@ -1,8 +1,10 @@
 from flask import Flask, jsonify
 from flask import request
+from flask_cors import CORS
 import grabStats
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def hello_world():

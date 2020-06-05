@@ -10,6 +10,7 @@ requests = "*"
 pprint = "*"
 flask = "*"
 gunicorn = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"

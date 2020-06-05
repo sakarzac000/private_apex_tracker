@@ -12,8 +12,8 @@ async function queryApis(platformInput, nameInput) {
     });
 
     const posts = await postsPromise.then(res =>{
-        console.log(res)
+        console.log(postsPromise)
     }); 
 
-    return posts;
+    return postsPromise;
 }
