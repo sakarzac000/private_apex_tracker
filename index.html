@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Tracker</title>
+    <script src="/api_connect.js"></script>
     <script>
-        async function getApexStats() {
+        function getInput() {
             let platformInput = document.getElementById('platform-input').value;
-            console.log(platformInput);
             let nameInput = document.getElementById('name-input').value;
-            console.log(nameInput);
 
+            queryApis(platformInput, nameInput);
         }
     </script>
 </head>
 <body>
     <input type="text" name="" id="platform-input" placeholder="platform">
     <input type="text" name="" id="name-input" placeholder="name">
-    <button onclick="getApexStats()">Submit</button>
+    <button onclick="getInput()">Submit</button>
     <div class="output">
         <p id="changeable">This is an output</p>
     </div>
