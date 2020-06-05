@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Tracker</title>
-    <script src="/api_connect.js"></script>
-    <script>
-        function getInput() {
-            let platformInput = document.getElementById('platform-input').value;
-            let nameInput = document.getElementById('name-input').value;
 
-            queryApis(platformInput, nameInput);
-        }
-    </script>
+    <script src="node_modules/node-fetch/"></script>
+    <script src="/api_connect.js"></script>
 </head>
 <body>
     <input type="text" name="" id="platform-input" placeholder="platform">
     <input type="text" name="" id="name-input" placeholder="name">
-    <button onclick="getInput()">Submit</button>
+    <button id='submit-btn'>Submit</button>
+    <script>
+        const buttonElement = document.getElementById('submit-btn');
+
+        buttonElement.addEventListener('click', function() {
+            let platformInput = document.getElementById('platform-input').value;
+            alert(platformInput);
+            let nameInput = document.getElementById('name-input').value;
+            alert(nameInput);
+            
+            queryApis(platformInput, nameInput);
+        })
+    </script>
     <div class="output">
         <p id="changeable">This is an output</p>
     </div>

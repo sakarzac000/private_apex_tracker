@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask import request
 import grabStats
 
@@ -11,7 +11,7 @@ def hello_world():
     name = request.headers.get('name')
     print(name)
 
-    return grabStats.getStats(platform, name)
+    return jsonify(grabStats.getStats(platform, name))
 
 if __name__ == '__main__':
     app.run(debug=True)

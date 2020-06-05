@@ -1,16 +1,19 @@
 async function queryApis(platformInput, nameInput) {
-    const fetch = require("node-fetch");
+
+
 
     const postsPromise = fetch('https://apex-legends-tracker-api.herokuapp.com/', {
         method: 'GET',
+        mode: 'no-cors',
         headers: {
             platform: platformInput,
-            name: nameInput
+            name: nameInput,
         }
     });
 
-    const posts = await postsPromise.then(res => res.json());
-    console.log(posts);
-}
+    const posts = await postsPromise.then(res =>{
+        console.log(res)
+    }); 
 
-console.log(queryApis('origin', 'zylbrad'))
+    return posts;
+}
